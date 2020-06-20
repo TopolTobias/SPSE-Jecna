@@ -14,7 +14,6 @@ public class Obdelnik {
 	public void setStrana1(double strana1) {
 		if (strana1 < 0) {
 			this.strana1 = Math.abs(strana1);
-			;
 		} else if (strana1 > 0) {
 			this.strana1 = strana1;
 		} else {
