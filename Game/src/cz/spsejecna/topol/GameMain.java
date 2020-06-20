@@ -29,31 +29,39 @@ public class GameMain {
 					+ ". You have 5 attribute points. It's up to you to decide who you are.");
 			System.out.println("You can add points to your strength, dexterity, intelligence, endurance, or vitality.");
 
+			System.out.println("Now write skill names to add points"); // pøidáno ujasnìní instrukcí
+
 			while (Player.getAttributePoints() > 0) {
 				String answer = in.nextLine();
+				System.out.println("write another skill name"); // pøidáno ujasnìní informací
 				if (answer.equalsIgnoreCase("strength")) {
 					Player.strength++;
 					Player.attributePoints--;
+
 				}
 
 				if (answer.equalsIgnoreCase("dexterity")) {
 					Player.dexterity++;
 					Player.attributePoints--;
+
 				}
 
 				if (answer.equalsIgnoreCase("intelligence")) {
 					Player.intelligence++;
 					Player.attributePoints--;
+
 				}
 
 				if (answer.equalsIgnoreCase("endurance")) {
 					Player.endurance++;
 					Player.attributePoints--;
+
 				}
 
 				if (answer.equalsIgnoreCase("vitality")) {
 					Player.vitality++;
 					Player.attributePoints--;
+
 				}
 
 			}
@@ -69,9 +77,11 @@ public class GameMain {
 					"\nThe alarm's gone off. It's time to wake up. Going to school is necessary, after all. You are now facing a decision. Eat breakfast first, or go to school right away?");
 			String decision = in.nextLine();
 
-			if (decision == "eat breakfast" || decision == "have breakfast" || decision == "breakfast") {
+			if (decision.equalsIgnoreCase("eat breakfast") || decision == "have breakfast"
+					|| decision.equalsIgnoreCase("breakfast")) { // pøidáno ignor case
 				decision = "breakfast";
-			} else if (decision == "go to school" || decision == "school") {
+			} else if (decision.equalsIgnoreCase("go to school") || decision.equalsIgnoreCase("school")) { // pøidáno ignor case
+																											
 				decision = "school";
 			}
 
@@ -90,18 +100,22 @@ public class GameMain {
 			System.out.println("You made it through the lessons. The time has come for another decision.");
 			System.out.println("Go home or stay outside?");
 			decision = in.nextLine();
-			if (decision == "go home" || decision == "home") {
+			if (decision.equalsIgnoreCase("go home") || decision.equalsIgnoreCase("home")) { // pøidáno ignor case
 				decision = "home";
-			} else if (decision == "stay outside" || decision == "outside") {
+			} else if (decision.equalsIgnoreCase("stay outside") || decision.equalsIgnoreCase("outside")) { // pøidáno ignor case
 				decision = "outside";
 			}
 			switch (decision) {
 			case "home":
-				System.out.println("You have arrived home. You are now free from the shackles of society and can now regenerate.");
+				System.out.println(
+						"You have arrived home. You are now free from the shackles of society and can now regenerate.");
 				Player.recoveredFromTiredness();
 				break;
-			case "outside":
-				
+			case "outside": // dodìlán konec
+				System.out.println("You went outside and got killed by serial murderer");
+				System.out.println("YOU DIED");
+				System.out.println("GAME OVER");
+
 			}
 
 		}
